@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main {
+  @apply flex flex-col min-h-screen;
+}
+
+.title {
+  @apply text-gray-50 leading-none font-extrabold tracking-tight;
+}
+
+.h1 {
+  @apply text-4xl sm:text-6xl lg:text-7xl;
+}
+
+.h2 {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+}
+
+.h3 {
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.h4 {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.h5 {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.subtitle {
+  @apply font-thin leading-none text-gray-300;
+}
+
+.aspect-macbook {
+  aspect-ratio: 1440 / 900;
+}
+
+a {
+  @apply font-medium text-violet-400 hover:text-violet-300;
+}
+
+strong {
+  @apply font-bold;
+}
+
+.background {
+  background-color: #040d21;
+}
+
+.code-effect::before {
+  content: ".";
+  color: white;
+  margin-left: 1px;
+}
+.code-effect::after {
+  content: "()";
+  color: white;
+  margin-left: 1px;
+}
+
+.primary-color {
+  @apply text-green-400;
+}
+
+body {
+  @apply text-gray-400 relative background;
+}
