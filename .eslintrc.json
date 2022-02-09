@@ -7,6 +7,8 @@
     "import/extensions": "off",
     "react/no-unescaped-entities": "warn",
     "react/function-component-definition": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-use-before-define": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }

@@ -11,13 +11,30 @@ const Layout: FC = ({ children }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <header className="absolute w-full top-0 left-0 p-4">
+    <Header />
+    <main className="flex-1 flex flex-col">
+      {children}
+    </main>
+    <Footer />
+  </>
+);
+
+export default Layout;
+
+function Header() {
+  return (
+    <header className="w-full px-4 py-6 font-mono flex justify-between max-w-7xl mx-auto">
+      <Link href="/">
+        <a className="react-effect">
+          Home
+        </a>
+      </Link>
       <nav>
-        <ul className="flex justify-center">
+        <ul className="flex">
           {navMenu.map(({ label, path }) => (
             <li key={path} className="">
               <Link href={path}>
-                <a className="font-mono px-2 code-effect">
+                <a className="px-2 code-effect">
                   {label}
                 </a>
               </Link>
@@ -26,23 +43,23 @@ const Layout: FC = ({ children }) => (
         </ul>
       </nav>
     </header>
+  );
+}
 
-    <main className="main">
-      {children}
-    </main>
-
-    <footer className="w-full p-4 mt-10">
-      <ul className="flex justify-center">
-        {socialMenu.map(({ label, link }) => (
-          <li key={link} className="">
-            <a href={link} target="_blank" rel="noreferrer" className="font-mono px-2">
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
+function Footer() {
+  return (
+    <footer className="w-full px-4 py-6 max-w-7xl mx-auto">
+      <nav>
+        <ul className="flex justify-end">
+          {socialMenu.map(({ label, link }) => (
+            <li key={link} className="uppercase">
+              <a href={link} target="_blank" rel="noreferrer" className="font-mono px-2">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </footer>
-  </>
-);
-
-export default Layout;
+  );
+}

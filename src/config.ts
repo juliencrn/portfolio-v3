@@ -1,19 +1,15 @@
-// eslint-disable-next-line import/prefer-default-export
 export const siteMetadata = {
-//   title: 'Passionate developer',
-  description: `I'm a fullstack developer and crypto-enthusiast.\n
-here I post some update about what I'm hacking on.\n
-welcome to my garden`,
-  //   siteUrl: 'https://juliencaron.com',
-  //   author: 'juliencrn', // Github username
+  siteUrl: 'https://juliencaron.com',
+  author: 'juliencrn', // Github username
   mail: 'juliencaron@pm.me',
-
+  title: 'Passionate developer',
+  description: 'Hi there 👋 My name is Julien and I love build some stuff living in the web, or outside. Welcome to my garden!',
 };
 
-export const socialLink = {
+export const links = {
   github: 'https://github.com/juliencrn',
   linkedin: 'https://www.linkedin.com/in/caronjulien/',
-  telegram: 'https://www.linkedin.com/in/caronjulien/',
+  telegram: 'https://t.me/juliencrn',
 };
 
 // Note: Internal link with Next/Link
@@ -25,7 +21,14 @@ export const navMenu = [
 
 // Note: External links only
 export const socialMenu = [
-  { label: 'github', link: socialLink.github },
-  { label: 'telegram', link: socialLink.telegram },
-  { label: 'linkedin', link: socialLink.linkedin },
+  { label: 'github', link: links.github },
+  { label: 'telegram', link: links.telegram },
+  { label: 'linkedin', link: links.linkedin },
 ];
+
+export default {
+  siteMetadata,
+  links,
+  navMenu,
+  socialMenu,
+};

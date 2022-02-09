@@ -5,11 +5,13 @@ import { allProjects, featuredProjects } from '../components/projects/utils';
 
 function Projects() {
   return (
-    <div className="max-w-5xl mx-auto w-full px-4">
-      <h1 className="title h1 mt-36 mb-4">
+    <div className="max-w-5xl mx-auto w-full p-4">
+      <h1 className="title h1 mt-24 mb-4">
         Work. Hobby. Open source.
       </h1>
-      <p className="h4">I love to build side projects [...]</p>
+      <p className="h3 subtitle mb-4">
+        I love to build side projects [...]
+      </p>
 
       <SectionTitle>featured</SectionTitle>
       <ul className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">

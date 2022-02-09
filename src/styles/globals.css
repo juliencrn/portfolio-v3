@@ -2,12 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-.main {
-  @apply flex flex-col min-h-screen;
+/* General styling */
+
+body {
+  @apply background text-gray-400;
 }
+
+#__next {
+  @apply min-h-screen flex flex-col relative;
+}
+
+a {
+  @apply font-medium text-violet-400 hover:text-violet-300;
+}
+
+strong {
+  @apply font-bold;
+}
+
+/* Utilities classes */
 
 .title {
   @apply text-gray-50 leading-none font-extrabold tracking-tight;
+}
+
+.subtitle {
+  @apply font-thin leading-none text-gray-300;
+}
+
+.body {
+  @apply text-gray-400;
 }
 
 .h1 {
@@ -30,20 +54,8 @@
   @apply text-lg sm:text-xl lg:text-2xl;
 }
 
-.subtitle {
-  @apply font-thin leading-none text-gray-300;
-}
-
 .aspect-macbook {
   aspect-ratio: 1440 / 900;
-}
-
-a {
-  @apply font-medium text-violet-400 hover:text-violet-300;
-}
-
-strong {
-  @apply font-bold;
 }
 
 .background {
@@ -52,19 +64,18 @@ strong {
 
 .code-effect::before {
   content: ".";
-  color: white;
-  margin-left: 1px;
+  @apply text-gray-50;
 }
 .code-effect::after {
   content: "()";
-  color: white;
-  margin-left: 1px;
+  @apply text-gray-50;
 }
 
-.primary-color {
-  @apply text-green-400;
+.react-effect::before {
+  content: "<";
+  @apply text-gray-50;
 }
-
-body {
-  @apply text-gray-400 relative background;
+.react-effect::after {
+  content: "/>";
+  @apply text-gray-50 ml-2;
 }
