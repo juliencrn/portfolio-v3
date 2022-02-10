@@ -20,10 +20,14 @@ strong {
   @apply font-bold;
 }
 
+pre, code {
+  @apply font-mono;
+}
+
 /* Utilities classes */
 
 .title {
-  @apply text-gray-50 leading-none font-extrabold tracking-tight;
+  @apply text-gray-50 leading-none font-extrabold;
 }
 
 .subtitle {

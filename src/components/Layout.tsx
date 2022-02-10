@@ -7,8 +7,7 @@ const Layout: FC = ({ children }) => (
   <>
     <Head>
       <title>Julien's portfolio</title>
-      <meta name="description" content={siteMetadata.description.replaceAll('\n', ' ')} />
-      <link rel="icon" href="/favicon.ico" />
+      <meta name="description" content={siteMetadata.description} />
     </Head>
 
     <Header />

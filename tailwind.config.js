@@ -5,7 +5,11 @@ module.exports = {
     './src/styles/**/*.css',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+      },
+    },
   },
   plugins: [],
 };
