@@ -1,8 +1,9 @@
 export interface Project {
     title: string
     excerpt: string
-    link: string
-    year: number
-    image: string
+    demoUrl: string
+    srcUrl: string
+    createdAt: string
     tags: string[]
+    featured?: boolean
 }
