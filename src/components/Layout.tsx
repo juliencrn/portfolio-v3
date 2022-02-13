@@ -3,18 +3,25 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { navMenu, siteMetadata, socialMenu } from '../config';
 
-const Layout: FC = ({ children }) => (
+interface LayoutProps {
+  pageTitle?: string
+  backgroundIndex?: number
+}
+
+const Layout: FC<LayoutProps> = ({ children, pageTitle, backgroundIndex }) => (
   <>
     <Head>
-      <title>Julien's portfolio</title>
+      <title>{pageTitle || "Julien's portfolio"}</title>
       <meta name="description" content={siteMetadata.description} />
     </Head>
 
-    <Header />
-    <main className="flex-1 flex flex-col">
-      {children}
-    </main>
-    <Footer />
+    <div className={`Layout page-bg-${backgroundIndex || 4}`}>
+      <Header />
+      <main className="flex-1 flex flex-col">
+        {children}
+      </main>
+      <Footer />
+    </div>
   </>
 );
 
@@ -24,7 +31,7 @@ function Header() {
   return (
     <header className="w-full px-4 py-6 font-mono flex justify-between max-w-7xl mx-auto">
       <Link href="/">
-        <a className="react-effect">
+        <a className="react-effect text-glow">
           Home
         </a>
       </Link>
@@ -33,7 +40,7 @@ function Header() {
           {navMenu.map(({ label, path }) => (
             <li key={path} className="">
               <Link href={path}>
-                <a className="px-2 code-effect">
+                <a className="px-2 code-effect text-glow">
                   {label}
                 </a>
               </Link>

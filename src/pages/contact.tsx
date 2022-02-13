@@ -1,13 +1,9 @@
-import Head from 'next/head';
+import Layout from '../components/Layout';
 import { siteMetadata, socialMenu } from '../config';
 
 function Contact() {
   return (
-    <>
-      <Head>
-        <title>Say hello to Julien</title>
-      </Head>
-
+    <Layout pageTitle="Say hello to Julien">
       <div className="m-auto max-w-4xl mx-auto p-4">
         <h1 className="title h1 mb-4">
           <span className="pb-3 inline-block">
@@ -34,7 +30,7 @@ function Contact() {
           ))}
         </ul>
       </div>
-    </>
+    </Layout>
   );
 }
 

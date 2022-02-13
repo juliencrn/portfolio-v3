@@ -4,6 +4,7 @@ import { Fragment } from 'react';
 import { ProjectCard, ProjectSmallCard } from '../components/ProjectCards';
 import { Project } from '../types';
 import projects from '../projects';
+import Layout from '../components/Layout';
 
 interface PageProps {
   featuredProjects: Project[]
@@ -12,52 +13,55 @@ interface PageProps {
 
 function Projects({ featuredProjects, projectsByYears }: PageProps) {
   return (
-    <div className="max-w-4xl mx-auto w-full p-4">
-      <section className="my-24">
-        <h1 className="title h1 mb-4 tracking-tight">
-          Work, learn, open-source.
-        </h1>
-        <p className="h3 subtitle mb-4">
-          I love to build side projects [...]
-        </p>
-      </section>
+    <Layout backgroundIndex={8}>
+      <div className="max-w-4xl mx-auto w-full p-4">
+        <section className="my-24">
+          <h1 className="title text-glow h1 mb-4 tracking-tight">
+            Work, learn, open-source.
+          </h1>
+          <p className="h3 subtitle mb-4">
+            I love to build side projects [...]
+          </p>
+        </section>
 
-      <section className="my-24">
-        <h2 className="title h3 mb-4">
-          <CodeTitle category="featured" />
-        </h2>
+        <section className="my-24">
+          <h2 className="text-gray-50 h3 mb-4">
+            <CodeTitle category="featured" />
+          </h2>
 
-        <div className="my-12">
-          {featuredProjects.map((project, i) => (
-            <Fragment key={project.title}>
-              {i > 0 && <hr className="my-6" />}
-              <ProjectCard {...project} />
-            </Fragment>
-          ))}
-        </div>
-      </section>
+          <div className="my-12">
+            {featuredProjects.map((project, i) => (
+              <Fragment key={project.title}>
+                {i > 0 && <hr className="my-6" />}
+                <ProjectCard {...project} />
+              </Fragment>
+            ))}
+          </div>
+        </section>
 
-      <section className="my-24">
-        <h2 className="title h3 mb-4">
-          <CodeTitle category="public" />
-        </h2>
+        <section className="my-24">
+          <h2 className="title h3 mb-4">
+            <CodeTitle category="public" />
+          </h2>
 
-        <ul className="my-12">
-          {projectsByYears.map(([year, list]) => (
-            <li key={year}>
-              <span className="title h4 mb-3 block">
-                {year}
-              </span>
-              <ul className="list-disc pl-5 mb-8">
-                {list.map((project) => (
-                  <ProjectSmallCard key={project.title} {...project} />
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
+          <ul className="my-12">
+            {projectsByYears.map(([year, list]) => (
+              <li key={year}>
+                <span className="title h4 mb-3 block">
+                  {year}
+                </span>
+                <ul className="list-disc pl-5 mb-8">
+                  {list.map((project) => (
+                    <ProjectSmallCard key={project.title} {...project} />
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    </Layout>
+
   );
 }
 

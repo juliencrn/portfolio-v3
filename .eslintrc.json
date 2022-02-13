@@ -9,6 +9,7 @@
     "react/function-component-definition": "off",
     "no-plusplus": "off",
     "no-use-before-define": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/require-default-props": "off"
   }
 }
