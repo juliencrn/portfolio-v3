@@ -14,7 +14,7 @@ export const links = {
 
 // Note: Internal link with Next/Link
 export const navMenu = [
-  { label: 'me', path: '/' },
+  { label: 'me', path: '/me' },
   { label: 'projects', path: '/projects' },
   { label: 'contact', path: '/contact' },
 ];
