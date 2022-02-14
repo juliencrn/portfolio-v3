@@ -15,7 +15,7 @@ body {
 .Layout::before {
   @apply h-full w-full absolute;
 
-  filter: blur(30px) opacity(25%);
+  filter: blur(50px) opacity(20%);
   content: '';
   background-size: cover;
   z-index: -1;
