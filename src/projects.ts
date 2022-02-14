@@ -248,7 +248,6 @@ const projects: Project[] = [
       'typescript',
     ],
     excerpt: 'My portfolio using Gatsby.js as front-end and Prismic as CMS',
-    featured: true,
   },
   {
     title: 'Legacy headless portfolio (v1)',
@@ -509,7 +508,7 @@ const projects: Project[] = [
       'reactjs',
       'typescript',
     ],
-    excerpt: 'Open-source: React hook library, ready to use, written in Typescript.',
+    excerpt: 'Open-source: React hook library, ready to use, written in Typescript with more than 20k downloads/week.',
     featured: true,
   },
   {
@@ -574,7 +573,7 @@ const projects: Project[] = [
   },
   {
     title: 'weeship',
-    demoUrl: '',
+    demoUrl: 'https://www.weeship.fr/',
     srcUrl: '',
     createdAt: '3/1/2020',
     tags: [
@@ -595,21 +594,6 @@ const projects: Project[] = [
       'material-ui',
     ],
     excerpt: 'Freelance: Data-visualization for a very small app',
-  },
-  {
-    title: 'trace.fm',
-    demoUrl: 'http://ht.trace.fm/',
-    srcUrl: '',
-    createdAt: '6/1/2018',
-    tags: [
-      'wordpress',
-      'php',
-      'underscore',
-      'acf',
-      'jquery',
-      'gulp',
-    ],
-    excerpt: 'Freelance: Website integration using WordPress (frontend from scratch)',
   },
   {
     title: 'sire',
@@ -735,6 +719,51 @@ const projects: Project[] = [
       'scss',
     ],
     excerpt: 'website development using WordPress for the Unscuzzy agency.',
+  },
+  {
+    title: 'new-tab',
+    demoUrl: '',
+    srcUrl: 'https://github.com/juliencrn/new-tab',
+    createdAt: '2/7/2022',
+    tags: [
+      'react',
+      'chrome-extension',
+      'typescript',
+      'aura-theme',
+    ],
+    excerpt: 'A very small Chrome extension that reminds me my main goal each time I open a new tab in my browser.',
+  },
+  {
+    title: 'lynxee-nft',
+    demoUrl: 'https://lynxee.neodium.io/',
+    srcUrl: '', // soon open-source https://github.com/juliencrn/lynxee
+    createdAt: '1/1/2022',
+    tags: [
+      'rust',
+      'wasm',
+      'nft-collection',
+      'elrond',
+      'react',
+      'nextjs',
+      'typescript',
+      'tailwindcss',
+      'dapp',
+    ],
+    excerpt: 'A Rust-based smart-contract on the Erlond\'s network and a React dapp to mint NFTs, built with the Neodium team.',
+  },
+  {
+    title: 'chefclub.tv',
+    demoUrl: 'https://www.chefclub.tv/',
+    srcUrl: '', // soon open-source https://github.com/juliencrn/lynxee
+    createdAt: '9/1/2021',
+    tags: [
+      'react',
+      'redux',
+      'gatsby',
+      'scss-modules',
+    ],
+    excerpt: 'Freelance: I\'ve contributed to build the frontend of Chefclub.tv for months using React and Typescript.',
+    featured: true,
   },
 ];
 
