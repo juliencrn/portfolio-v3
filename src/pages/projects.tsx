@@ -5,6 +5,7 @@ import { ProjectCard, ProjectSmallCard } from '../components/ProjectCards';
 import { Project } from '../types';
 import projects from '../projects';
 import Layout from '../components/Layout';
+import AnimeOnAppear from '../components/AnimeOnAppear';
 
 interface PageProps {
   featuredProjects: Project[]
@@ -15,51 +16,67 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
   return (
     <Layout backgroundIndex={8}>
       <div className="max-w-4xl mx-auto w-full p-4">
-        <section className="my-24">
-          <h1 className="title text-glow h1 mb-4 tracking-tight">
-            Work, learn, open-source.
-          </h1>
-          <p className="h3 subtitle mb-4">
-            I love to build side projects [...]
-          </p>
-        </section>
+        <AnimeOnAppear direction="top">
+          <section className="my-24">
+            <h1 className="title text-glow h1 mb-4 tracking-tight">
+              Work, learn, open-source.
+            </h1>
+            <p className="h3 subtitle mb-4">
+              I love to build stuffs, seriously, I'm addicted 🤣.
+              I like both shipping a PoC or writing clean code, work on backend or frontend,
+              building CLI, web, mobile, web3 applications, scripting, automating, testing...
+              Currently, I'm excited about Rust and blockchain related topics.
+            </p>
+          </section>
+        </AnimeOnAppear>
 
         <section className="my-24">
-          <h2 className="text-gray-50 h3 mb-4">
-            <CodeTitle category="featured" />
-          </h2>
+          <AnimeOnAppear>
+            <h2 className="text-gray-50 h3 mb-4">
+              <CodeTitle category="featured" />
+            </h2>
+          </AnimeOnAppear>
 
           <div className="my-12">
             {featuredProjects.map((project, i) => (
               <Fragment key={project.title}>
-                {i > 0 && <hr className="my-6" />}
-                <ProjectCard {...project} />
+                <AnimeOnAppear>
+                  {i > 0 && <hr className="my-6" />}
+                </AnimeOnAppear>
+                <AnimeOnAppear>
+                  <ProjectCard {...project} />
+                </AnimeOnAppear>
               </Fragment>
             ))}
           </div>
         </section>
 
         <section className="my-24">
-          <h2 className="title h3 mb-4">
-            <CodeTitle category="public" />
-          </h2>
+          <AnimeOnAppear>
+            <h2 className="text-gray-50 h3 mb-4">
+              <CodeTitle category="public" />
+            </h2>
+          </AnimeOnAppear>
 
           <ul className="my-12">
             {projectsByYears.map(([year, list]) => (
               <li key={year}>
-                <span className="title h4 mb-3 block">
-                  {year}
-                </span>
-                <ul className="list-disc pl-5 mb-8">
-                  {list.map((project) => (
-                    <ProjectSmallCard key={project.title} {...project} />
-                  ))}
-                </ul>
+                <AnimeOnAppear>
+                  <span className="title h4 mb-3 block">
+                    {year}
+                  </span>
+                  <ul className="list-disc pl-5 mb-8">
+                    {list.map((project) => (
+                      <ProjectSmallCard key={project.title} {...project} />
+                    ))}
+                  </ul>
+                </AnimeOnAppear>
               </li>
             ))}
           </ul>
         </section>
       </div>
+
     </Layout>
 
   );
