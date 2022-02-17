@@ -235,8 +235,25 @@ const projects: Project[] = [
     excerpt: 'FreeCodeCamp front-end project to learn test-driven development and BEM using react.js',
   },
   {
+    title: 'portfolio (v3)',
+    demoUrl: 'https://v2.juliencaron.com',
+    srcUrl: 'https://github.com/juliencrn/portfolio',
+    createdAt: '7/20/2019',
+    tags: [
+      'react',
+      'nextjs',
+      'tailwindcss',
+      'usehooks-ts',
+      'netlify',
+      'typescript',
+      'open-source',
+    ],
+    excerpt: 'The latest version of my portfolio where you are now',
+    featured: true,
+  },
+  {
     title: 'portfolio (v2)',
-    demoUrl: 'https://juliencaron.eu',
+    demoUrl: 'https://v2.juliencaron.com',
     srcUrl: 'https://github.com/juliencrn/portfolio',
     createdAt: '7/20/2019',
     tags: [
