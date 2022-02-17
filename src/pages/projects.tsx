@@ -17,7 +17,7 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
     <Layout backgroundIndex={8}>
       <div className="max-w-4xl mx-auto w-full p-4">
         <AnimeOnAppear direction="top">
-          <section className="my-24">
+          <section className="my-12 md:my-24">
             <h1 className="title text-glow h1 mb-4 tracking-tight">
               Work, learn, open-source.
             </h1>
@@ -30,14 +30,14 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
           </section>
         </AnimeOnAppear>
 
-        <section className="my-24">
+        <section className="my-12 md:my-24">
           <AnimeOnAppear>
             <h2 className="text-gray-50 h3 mb-4">
               <CodeTitle category="featured" />
             </h2>
           </AnimeOnAppear>
 
-          <div className="my-12">
+          <div className="my-6 md:my-12">
             {featuredProjects.map((project, i) => (
               <Fragment key={project.title}>
                 <AnimeOnAppear>
@@ -51,21 +51,21 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
           </div>
         </section>
 
-        <section className="my-24">
+        <section className="my-12 md:my-24">
           <AnimeOnAppear>
             <h2 className="text-gray-50 h3 mb-4">
               <CodeTitle category="public" />
             </h2>
           </AnimeOnAppear>
 
-          <ul className="my-12">
+          <ul className="my-6 md:my-12">
             {projectsByYears.map(([year, list]) => (
               <li key={year}>
                 <AnimeOnAppear>
                   <span className="title h4 mb-3 block">
                     {year}
                   </span>
-                  <ul className="list-disc pl-5 mb-8">
+                  <ul className="pl-5 mb-8">
                     {list.map((project) => (
                       <ProjectSmallCard key={project.title} {...project} />
                     ))}
@@ -101,11 +101,20 @@ export const getStaticProps: GetStaticProps = async () => {
   const featuredProjects: Project[] = [];
   const projectsByYearsMap: Record<number, Project[]> = {};
 
+  let unFinishedCount = 0;
+
   // Filter projects into categories
   for (let i = 0; i < projects.length; i++) {
+    // exclude un-finished project and notify me
+    if (projects[i].unFinished) {
+      console.warn(`warn - Project "${projects[i].title}" not published: unfinished.`);
+      unFinishedCount += 1;
+      // eslint-disable-next-line no-continue
+      continue;
+    }
     // exclude project without any link
     if (!projects[i].demoUrl && !projects[i].srcUrl) {
-      console.warn(`pages/projects/getStaticProps: ${projects[i].title} has not link`);
+      console.warn(`warn - pages/projects/getStaticProps: ${projects[i].title} has not link`);
       // eslint-disable-next-line no-continue
       continue;
     }
@@ -121,6 +130,8 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     }
   }
+
+  console.log(`info - there is ${unFinishedCount} un-finished project(s)`);
 
   const projectsByYears = Object
     .entries(projectsByYearsMap)

@@ -6,4 +6,5 @@ export interface Project {
     createdAt: string
     tags: string[]
     featured?: boolean
+    unFinished?: boolean
 }
