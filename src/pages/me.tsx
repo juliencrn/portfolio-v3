@@ -22,7 +22,7 @@ function Home() {
               I'm very excited about the crypto-revolution going on and want to spend more time on it.
             </p>
             <p className="h3 subtitle mb-4">
-              Beside programming, I'm interested in finance, learning English and enjoy to play sports like mountain bike or calisthenics.
+              Beside programming, I'm interested in finance and enjoy to play sports like mountain bike or calisthenics.
             </p>
 
           </section>

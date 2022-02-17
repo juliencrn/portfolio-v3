@@ -65,7 +65,7 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
                   <span className="title h4 mb-3 block">
                     {year}
                   </span>
-                  <ul className="pl-5 mb-8">
+                  <ul className="pl-3 sm:pl-5 mb-8">
                     {list.map((project) => (
                       <ProjectSmallCard key={project.title} {...project} />
                     ))}
@@ -86,7 +86,7 @@ export default Projects;
 
 const CodeTitle = ({ category }: { category: string}) => (
   <pre className="flex flex-wrap">
-    <code className="text-violet-400 mr-4">{'->'}</code>
+    <code className="text-violet-400 mr-2 md:mr-4">{'->'}</code>
     projects
     <code className="text-gray-50">(</code>
     <code className="text-violet-400">
