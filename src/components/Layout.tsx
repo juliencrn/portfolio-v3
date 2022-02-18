@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Script from 'next/script';
 import { FC } from 'react';
 import { navMenu, siteMetadata, socialMenu } from '../config';
 import AnimeOnAppear from './AnimeOnAppear';
@@ -23,6 +24,19 @@ const Layout: FC<LayoutProps> = ({ children, pageTitle, backgroundIndex }) => (
       </main>
       <Footer />
     </div>
+
+    <Script
+      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+      strategy="afterInteractive"
+    />
+    <Script id="google-analytics" strategy="afterInteractive">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+      `}
+    </Script>
   </>
 );
 
