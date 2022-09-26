@@ -1,18 +1,24 @@
 import { GetStaticProps } from 'next';
-import { Fragment } from 'react';
+import { ReactNode } from 'react';
 
-import { ProjectCard, ProjectSmallCard } from '../components/ProjectCards';
+import { ProjectList, SmallProjectList } from '../components/ProjectCards';
 import { Project } from '../types';
 import projects from '../projects';
 import Layout from '../components/Layout';
 import AnimeOnAppear from '../components/AnimeOnAppear';
+import { info, warn } from '../logger';
 
 interface PageProps {
+  currentProjects: Project[];
   featuredProjects: Project[];
   projectsByYears: [string, Project[]][];
 }
 
-function Projects({ featuredProjects, projectsByYears }: PageProps) {
+function Projects({
+  currentProjects,
+  featuredProjects,
+  projectsByYears,
+}: PageProps) {
   return (
     <Layout backgroundIndex={8}>
       <div className="max-w-4xl mx-auto w-full p-4">
@@ -31,55 +37,40 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
           </section>
         </AnimeOnAppear>
 
-        <section className="my-12 md:my-24">
-          <AnimeOnAppear>
-            <h2 className="text-gray-50 h3 mb-4">
-              <CodeTitle category="featured" />
-            </h2>
-          </AnimeOnAppear>
+        <Section title="current">
+          <ProjectList projects={currentProjects} />
+        </Section>
 
-          <div className="my-6 md:my-12">
-            {featuredProjects.map((project, i) => (
-              <Fragment key={project.title}>
-                <AnimeOnAppear>
-                  {i > 0 && <hr className="my-6" />}
-                </AnimeOnAppear>
-                <AnimeOnAppear>
-                  <ProjectCard {...project} />
-                </AnimeOnAppear>
-              </Fragment>
-            ))}
-          </div>
-        </section>
+        <Section title="featured">
+          <ProjectList projects={featuredProjects} />
+        </Section>
 
-        <section className="my-12 md:my-24">
-          <AnimeOnAppear>
-            <h2 className="text-gray-50 h3 mb-4">
-              <CodeTitle category="public" />
-            </h2>
-          </AnimeOnAppear>
-
-          <ul className="my-6 md:my-12">
-            {projectsByYears.map(([year, list]) => (
-              <li key={year}>
-                <AnimeOnAppear>
-                  <span className="title h4 mb-3 block">{year}</span>
-                  <ul className="pl-3 sm:pl-5 mb-8">
-                    {list.map(project => (
-                      <ProjectSmallCard key={project.title} {...project} />
-                    ))}
-                  </ul>
-                </AnimeOnAppear>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <Section title="public">
+          <SmallProjectList projectsByYears={projectsByYears} />
+        </Section>
       </div>
     </Layout>
   );
 }
 
 export default Projects;
+
+interface SectionProps {
+  title: string;
+  children: ReactNode;
+}
+
+const Section = ({ title, children }: SectionProps) => (
+  <section className="my-12 md:my-24">
+    <AnimeOnAppear>
+      <h2 className="text-gray-50 h3 mb-4">
+        <CodeTitle category={title} />
+      </h2>
+    </AnimeOnAppear>
+
+    {children}
+  </section>
+);
 
 const CodeTitle = ({ category }: { category: string }) => (
   <pre className="flex flex-wrap">
@@ -93,47 +84,47 @@ const CodeTitle = ({ category }: { category: string }) => (
 
 // Filter projects at the build time
 export const getStaticProps: GetStaticProps = async () => {
+  const currentProjects: Project[] = [];
   const featuredProjects: Project[] = [];
   const projectsByYearsMap: Record<number, Project[]> = {};
-
   let unFinishedCount = 0;
 
   // Filter projects into categories
-  for (let i = 0; i < projects.length; i++) {
+  for (const project of projects) {
     // exclude un-finished project and notify me
-    if (projects[i].unFinished) {
-      console.warn(
-        `warn - Project "${projects[i].title}" not published: unfinished.`,
-      );
+    if (project.unFinished) {
+      warn(`Project "${project.title}" not published: unfinished.`);
       unFinishedCount += 1;
       continue;
     }
-    // exclude project without any link
-    if (!projects[i].demoUrl && !projects[i].srcUrl) {
-      console.warn(
-        `warn - pages/projects/getStaticProps: ${projects[i].title} has not link`,
-      );
-      continue;
+    // Notice that there is a missing link
+    if (!project.demoUrl && !project.srcUrl) {
+      warn(`pages/projects/getStaticProps: ${project.title} has not link`);
     }
 
-    if (projects[i].featured) {
-      featuredProjects.push(projects[i]);
+    if (project.currently) {
+      currentProjects.push(project);
+    } else if (project.featured) {
+      featuredProjects.push(project);
     } else {
-      const year = new Date(projects[i].createdAt).getFullYear();
+      const year = new Date(project.createdAt).getFullYear();
       if (projectsByYearsMap[year]) {
-        projectsByYearsMap[year].push(projects[i]);
+        projectsByYearsMap[year].push(project);
       } else {
-        projectsByYearsMap[year] = [projects[i]];
+        projectsByYearsMap[year] = [project];
       }
     }
   }
 
-  console.log(`info - there is ${unFinishedCount} un-finished project(s)`);
+  info(`there is ${unFinishedCount} un-finished project(s)`);
 
-  const projectsByYears = Object.entries(projectsByYearsMap).sort(
-    (a, b) => Number(b[0]) - Number(a[0]),
-  );
+  const props = {
+    currentProjects,
+    featuredProjects,
+    projectsByYears: Object.entries(projectsByYearsMap).sort(
+      (a, b) => Number(b[0]) - Number(a[0]), // Sorted by year
+    ),
+  };
 
-  // will be passed to the page component as props
-  return { props: { featuredProjects, projectsByYears } };
+  return { props };
 };

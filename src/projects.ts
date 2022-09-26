@@ -2,8 +2,82 @@ import { Project } from './types';
 
 const projects: Project[] = [
   {
+    title: 'allfeat',
+    excerpt:
+      "Freelance: I'm currently working at Allfeat as full-stack web3 developer. We build a blockchain on top on Substrate for the music industry. We also have to develop websites, DevTools, SDK, DApps... :)",
+    demoUrl: 'https://allfeat.com/',
+    currently: true,
+    srcUrl: 'https://github.com/All-feat',
+    createdAt: '1/5/2022',
+    tags: [
+      'web3',
+      'rust',
+      'typescript',
+      'substrate',
+      'react',
+      'svelte',
+      'polkadot.js',
+    ],
+  },
+  {
+    title: 'carbon-seeds',
+    excerpt: 'Web3 Landing page (now abandoned).',
+    demoUrl: 'https://3cubes.netlify.app/',
+    srcUrl: 'https://github.com/juliencrn/3cubes-website',
+    createdAt: '2/3/2022',
+    tags: ['react', 'next.js', 'tailwindcss', 'typescript'],
+  },
+  {
+    title: 'jlf(v)d',
+    excerpt:
+      'Side project: (quite secret for now) Decentralized application built on the Solana blockchain.',
+    currently: true,
+    createdAt: '18/9/2022',
+    // srcUrl: "https://github.com/juliencrn/Jlfd" // private for now
+    tags: [
+      'solana',
+      'rust',
+      'anchor',
+      'typescript',
+      'react',
+      'next.js',
+      'web3',
+    ],
+  },
+  {
+    title: 'crypto-trading-bots',
+    excerpt:
+      "Side project: I'm experimenting algorithmic trading like alpha trading or DEX arbitrage.",
+
+    createdAt: '1/4/2022',
+    currently: true,
+    tags: [
+      'web3',
+      'solidity',
+      'typescript',
+      'rust',
+      'python',
+      'pandas',
+      'data-analysis',
+      'EVM',
+    ],
+  },
+  {
+    title: 'matrix-rain',
+    excerpt: 'Learn: Little CLI project to discover Python.',
+    srcUrl: 'https://github.com/juliencrn/matrix-rain',
+    tags: ['python', 'cli'],
+    createdAt: '3/5/2022',
+  },
+  {
+    title: 'wallkanda',
+    demoUrl: 'https://wallkanda.art/',
+    excerpt: 'Freelance: Build a multi-steps form to issue NFTs.',
+    tags: ['svelte', 'typescript', 'tailwindcss'],
+    createdAt: '3/5/2022',
+  },
+  {
     title: 'anonymous-message-board',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/anonymous-message-board',
     createdAt: '7/1/2020',
     tags: [
@@ -16,12 +90,11 @@ const projects: Project[] = [
       'typescript',
     ],
     excerpt:
-      'Last FreeCodeCamp backend exercise using Node Express MongoDB Typescript Jest & React',
+      'Last FreeCodeCamp backend exercise using Node Express MongoDB Typescript Jest & React.',
     unFinished: true,
   },
   {
     title: 'chat',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/chat',
     createdAt: '10/7/2021',
     tags: [
@@ -42,7 +115,6 @@ const projects: Project[] = [
   },
   {
     title: 'dotfiles',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/dotfiles',
     createdAt: '11/21/2020',
     tags: [
@@ -64,11 +136,10 @@ const projects: Project[] = [
     createdAt: '10/27/2019',
     tags: ['react', 'javascript', 'freecodecamp'],
     excerpt:
-      'Front-end FreeCodeCamp project : Build a drum machine using React',
+      'Front-end FreeCodeCamp project : Build a drum machine using React.',
   },
   {
     title: 'eslint-config-test',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/eslint-config-test',
     createdAt: '11/20/2020',
     tags: ['npm', 'eslint'],
@@ -76,7 +147,6 @@ const projects: Project[] = [
   },
   {
     title: 'game-of-life',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/game-of-life',
     createdAt: '1/1/2022',
     tags: ['rust', 'canvas', 'js', 'wasm', 'webassembly'],
@@ -88,44 +158,36 @@ const projects: Project[] = [
     srcUrl: 'https://github.com/juliencrn/gatsby-material-typescript-starter',
     createdAt: '4/16/2020',
     tags: ['react', 'typescript', 'gatsby', 'material-ui', 'prettier'],
-    excerpt: 'A simple starter using Typescript & Material-ui',
+    excerpt: 'A simple starter using Typescript & Material-ui.',
   },
   {
     title: 'gatsby-starter-mdx-themeui',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/gatsby-starter-mdx-themeui',
     createdAt: '8/9/2019',
     tags: ['react', 'gatsby', 'graphql', 'mdx', 'theme-ui'],
-    excerpt: 'A simple Gatsby starter powered by MDX and Theme UI',
+    excerpt: 'A simple Gatsby starter powered by MDX and Theme UI.',
   },
   {
     title: 'hello_grep',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/hello_grep',
     createdAt: '6/24/2021',
     tags: ['rust', 'command-line', 'filesystem'],
     excerpt: 'Simplified unix grep clone to how to make a CLI app in Rust.',
   },
-  // {
-  //   title: 'kitten-challenge',
-  //   demoUrl: '',
-  //   srcUrl: 'https://github.com/juliencrn/kitten-challenge',
-  //   createdAt: '5/14/2021',
-  //   tags: [
-  //     'react',
-  //     'firebase',
-  //     'react-native',
-  //     'typescript',
-  //   ],
-  //   excerpt: 'React-native + Firebase app | WIP Project... abandoned',
-  // },
+  {
+    title: 'kitten-challenge',
+    srcUrl: 'https://github.com/juliencrn/kitten-challenge',
+    createdAt: '5/14/2021',
+    tags: ['react', 'firebase', 'react-native', 'typescript'],
+    excerpt: 'React-native + Firebase app | WIP Project... abandoned.',
+    unFinished: true,
+  },
   {
     title: 'localhost',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/localhost',
     createdAt: '5/26/2019',
     tags: ['php', 'lamp', 'localhost', 'mamp', 'tachyons', 'wamp'],
-    excerpt: 'Customize your localhost home page',
+    excerpt: 'Customize your localhost home page.',
   },
   {
     title: 'markdown-previewer',
@@ -142,27 +204,24 @@ const projects: Project[] = [
       'theme-ui',
     ],
     excerpt:
-      'FreeCodeCamp learning front-end project - Build a markdown previewer using React',
+      'FreeCodeCamp learning front-end project - Build a markdown previewer using React.',
   },
-  // {
-  //   title: 'mini-redis',
-  //   demoUrl: '',
-  //   srcUrl: 'https://github.com/juliencrn/mini-redis',
-  //   createdAt: '12/26/2021',
-  //   tags: [
-  //     'rust',
-  //     'runtime',
-  //     'tokio',
-  //   ],
-  //   excerpt: 'Little project to learn how to build apps on top on Tokio, a Rust runtime.',
-  // },
+  {
+    title: 'mini-redis',
+    srcUrl: 'https://github.com/juliencrn/mini-redis',
+    createdAt: '12/26/2021',
+    tags: ['rust', 'runtime', 'tokio'],
+    excerpt:
+      'Little project to learn how to build apps on top on Tokio, a Rust runtime.',
+    unFinished: true,
+  },
   {
     title: 'netlify-status-page',
     demoUrl: 'https://netlify-status-page.netlify.app/',
     srcUrl: 'https://github.com/juliencrn/netlify-status-page',
     createdAt: '10/12/2020',
     tags: ['react', 'typescript', 'netlify', 'github', 'css'],
-    excerpt: 'Netlify status page',
+    excerpt: 'Netlify status page.',
   },
   {
     title: 'oser-ecrire',
@@ -178,7 +237,7 @@ const projects: Project[] = [
       'sanity-io',
       'typescript',
     ],
-    excerpt: 'The "Oser Ecrire"\'s Blog',
+    excerpt: 'The "Oser Ecrire"\'s Blog.',
   },
   {
     title: 'pomodoro-timer',
@@ -187,10 +246,10 @@ const projects: Project[] = [
     createdAt: '11/8/2019',
     tags: ['react', 'bem', 'freecodecamp', 'jest', 'scss', 'tdd'],
     excerpt:
-      'FreeCodeCamp front-end project to learn test-driven development and BEM using react.js',
+      'FreeCodeCamp front-end project to learn test-driven development and BEM using react.js.',
   },
   {
-    title: 'portfolio (v3)',
+    title: 'portfolio-v3',
     demoUrl: 'https://v2.juliencaron.com',
     srcUrl: 'https://github.com/juliencrn/portfolio',
     createdAt: '7/20/2019',
@@ -203,11 +262,11 @@ const projects: Project[] = [
       'typescript',
       'open-source',
     ],
-    excerpt: 'The latest version of my portfolio where you are now',
+    excerpt: 'The latest version of my portfolio where you are now.',
     featured: true,
   },
   {
-    title: 'portfolio (v2)',
+    title: 'portfolio-v2',
     demoUrl: 'https://v2.juliencaron.com',
     srcUrl: 'https://github.com/juliencrn/portfolio',
     createdAt: '7/20/2019',
@@ -221,15 +280,14 @@ const projects: Project[] = [
       'theme-ui',
       'typescript',
     ],
-    excerpt: 'My portfolio using Gatsby.js as front-end and Prismic as CMS',
+    excerpt: 'My portfolio using Gatsby.js as front-end and Prismic as CMS.',
   },
   {
-    title: 'Legacy headless portfolio (v1)',
-    demoUrl: '',
+    title: 'Legacy-headless-portfolio-v1',
     srcUrl: 'https://github.com/juliencrn/portfolio-admin',
     createdAt: '9/5/2019',
     tags: ['wordpress', 'headless-cms', 'php'],
-    excerpt: 'WordPress as headless CMS for my personal Portfolio',
+    excerpt: 'WordPress as headless CMS for my personal Portfolio.',
   },
   {
     title: 'random-quote-machine',
@@ -238,26 +296,25 @@ const projects: Project[] = [
     createdAt: '10/22/2019',
     tags: ['react', 'javascript', 'bem', 'freecodecamp', 'hook', 'scss'],
     excerpt:
-      'FreeCodeCamp Front End Libraries Projects - Build a Random Quote Machine',
+      'FreeCodeCamp Front End Libraries Projects - Build a Random Quote Machine.',
     unFinished: true,
   },
   {
-    title: 'React-calculator',
+    title: 'react-calculator',
     demoUrl: 'https://junscuzzy.github.io/React-calculator/',
     srcUrl: 'https://github.com/juliencrn/React-calculator',
     createdAt: '10/21/2018',
     tags: ['react', 'javascript'],
-    excerpt: 'Learning project',
+    excerpt: 'Learning project.',
     unFinished: true,
   },
   {
     title: 'react-calculator-v2',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/react-calculator-v2',
     createdAt: '1/3/2020',
     tags: ['react', 'typescript', 'freecodecamp', 'material-ui'],
     excerpt:
-      'FreeCodeCamp Frontend challenge - Calculator using react and typescript',
+      'FreeCodeCamp Frontend challenge - Calculator using react and typescript.',
   },
   {
     title: 'react-gallery',
@@ -277,7 +334,7 @@ const projects: Project[] = [
       'Learning front-end project : Skeleton > Blur Thumbnail > Image lazy-loading.',
   },
   {
-    title: 'React-morpion',
+    title: 'react-morpion',
     demoUrl: 'https://junscuzzy.github.io/React-morpion/',
     srcUrl: 'https://github.com/juliencrn/React-morpion',
     createdAt: '4/22/2019',
@@ -301,7 +358,7 @@ const projects: Project[] = [
     srcUrl: 'https://github.com/juliencrn/redux-todo',
     createdAt: '7/8/2019',
     tags: ['react', 'react-hook', 'redux', 'tachyons'],
-    excerpt: 'To-do app to learn Redux',
+    excerpt: 'To-do app to learn Redux.',
   },
   {
     title: 'rusty-journal',
@@ -350,7 +407,6 @@ const projects: Project[] = [
   },
   {
     title: 'telegram-rsi-bot',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/telegram-rsi-bot',
     createdAt: '11/20/2021',
     tags: [
@@ -363,7 +419,7 @@ const projects: Project[] = [
       'yahoo-finance',
     ],
     excerpt:
-      'Send me the price and the Relative Strength Index (RSI) for some crypto assets, stocks and indexes',
+      'Send me the price and the Relative Strength Index (RSI) for some crypto assets, stocks and indexes.',
   },
   {
     title: 'tetris',
@@ -380,7 +436,7 @@ const projects: Project[] = [
       'theme-ui',
       'typescript',
     ],
-    excerpt: 'Build a Tetris Game using HTML5 Canvas & React + Redux ',
+    excerpt: 'Build a Tetris Game using HTML5 Canvas & React + Redux.',
   },
   {
     title: 'the-algorithm-challenge',
@@ -398,11 +454,10 @@ const projects: Project[] = [
       'typescript',
     ],
     excerpt:
-      "Let's practice the algorithms and data-structures using TDD and written in Typescript and Rust (The exercises are from FreeCodeCamp)",
+      "Let's practice the algorithms and data-structures using TDD and written in Typescript and Rust (The exercises are from FreeCodeCamp).",
   },
   {
     title: 'ts-blockchain-api',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/ts-blockchain-api',
     createdAt: '4/12/2020',
     tags: [
@@ -415,11 +470,10 @@ const projects: Project[] = [
       'eslint',
     ],
     excerpt:
-      'Learning project: Implement a very simple blockchain, served in a REST API and made with Typescript OOP & Express.js',
+      'Learning project: Implement a very simple blockchain, served in a REST API and made with Typescript OOP & Express.js.',
   },
   {
     title: 'url-shortener',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/url-shortener',
     createdAt: '11/27/2019',
     tags: [
@@ -431,7 +485,7 @@ const projects: Project[] = [
       'rest-api',
     ],
     excerpt:
-      'FreeCodeCamp Micro-services with NodeJS: Build an url shortener (like Bitly)',
+      'FreeCodeCamp Micro-services with NodeJS: Build an url shortener (like Bitly).',
   },
   {
     title: 'usehooks-ts',
@@ -449,12 +503,11 @@ const projects: Project[] = [
       'typescript',
     ],
     excerpt:
-      'Open-source: React hook library, ready to use, written in Typescript with more than 20k downloads/week.',
+      "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 90k downloads/week.",
     featured: true,
   },
   {
     title: 'voting-dapp',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/voting-dapp',
     createdAt: '8/6/2021',
     tags: ['solidity', 'dapp', 'react', 'truffle', 'web3'],
@@ -468,12 +521,11 @@ const projects: Project[] = [
     createdAt: '2/19/2021',
     tags: ['react', 'typescript', 'recoil', 'react-konva', 'dracula'],
     excerpt:
-      'Experimental learning project: Building a web whiteboard to draw mind-maps or mock-ups',
+      'Experimental learning project: Building a web whiteboard to draw mind-maps or mock-ups.',
     unFinished: true,
   },
   {
     title: 'wordpress-to-ndjson',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/wordpress-to-ndjson',
     createdAt: '4/30/2020',
     tags: [
@@ -486,7 +538,7 @@ const projects: Project[] = [
       'wordpress',
     ],
     excerpt:
-      'CLI tool that fetch WordPress data to produce ndjson files for sanity.io importation',
+      'CLI tool that fetch WordPress data to produce ndjson files for sanity.io importation.',
   },
   {
     title: 'wp-search-n-replace',
@@ -503,28 +555,33 @@ const projects: Project[] = [
       'wordpress',
     ],
     excerpt:
-      'SQL query generator to search & replace URLs during website transfert',
+      'SQL query generator to search & replace URLs during website transfer.',
+  },
+  {
+    title: 'twitter-clone',
+    excerpt:
+      'Learn: Dive into Rust by creating a simplified version of the Twitter API',
+    srcUrl: 'https://github.com/juliencrn/twitter-clone',
+    tags: ['rust', 'REST-API', 'postgreSQL', 'diesel-ORM', 'actix'],
+    createdAt: '1/2/2022',
+    unFinished: true,
   },
   {
     title: 'weeship',
     demoUrl: 'https://www.weeship.fr/',
-    srcUrl: '',
     createdAt: '3/1/2020',
     tags: ['react', 'redux', 'material-ui'],
-    excerpt: 'Freelance: Dashboard development using React, Redux for Weeship',
+    excerpt: 'Freelance: Dashboard development using React, Redux for Weeship.',
   },
   {
     title: 'find-the-missing-word',
-    demoUrl: '',
-    srcUrl: '',
     createdAt: '6/1/2019',
     tags: ['react', 'redux', 'material-ui'],
-    excerpt: 'Freelance: Data-visualization for a very small app',
+    excerpt: 'Freelance: Data-visualization for a very small app.',
   },
   {
     title: 'sire',
     demoUrl: 'https://eager-dubinsky-80471f.netlify.app/',
-    srcUrl: '',
     createdAt: '1/1/2019',
     tags: [
       'react',
@@ -540,7 +597,6 @@ const projects: Project[] = [
   {
     title: 'grand-prix-rsm',
     demoUrl: 'https://grand-prix-rsm.fr/',
-    srcUrl: '',
     createdAt: '6/1/2018',
     tags: ['wordpress', 'php', 'underscore', 'acf', 'jquery', 'ajax', 'scss'],
     excerpt: 'website development using WordPress for the Unscuzzy agency.',
@@ -548,7 +604,6 @@ const projects: Project[] = [
   {
     title: 'astoria-finance',
     demoUrl: 'https://www.astoriafinance.com/',
-    srcUrl: '',
     createdAt: '6/1/2018',
     tags: [
       'wordpress',
@@ -566,7 +621,6 @@ const projects: Project[] = [
   {
     title: 'ctmp',
     demoUrl: 'https://ctmp.fr/',
-    srcUrl: '',
     createdAt: '3/1/2017',
     tags: [
       'wordpress',
@@ -582,7 +636,6 @@ const projects: Project[] = [
   {
     title: 'les-puces-du-design',
     demoUrl: 'https://pucesdudesign.com/fr/',
-    srcUrl: '',
     createdAt: '5/1/2017',
     tags: ['wordpress', 'php', 'underscore', 'acf', 'jquery', 'scss'],
     excerpt: 'website development using WordPress for the Unscuzzy agency.',
@@ -590,7 +643,6 @@ const projects: Project[] = [
   {
     title: 'gaypride.fr',
     demoUrl: 'https://www.gaypride.fr/',
-    srcUrl: '',
     createdAt: '5/1/2017',
     tags: ['wordpress', 'php', 'underscore', 'acf', 'jquery', 'scss'],
     excerpt: 'website development using WordPress for the Unscuzzy agency.',
@@ -598,23 +650,20 @@ const projects: Project[] = [
   {
     title: 'trace.fm',
     demoUrl: 'http://ht.trace.fm/',
-    srcUrl: '',
     createdAt: '6/1/2018',
     tags: ['wordpress', 'php', 'underscore', 'acf', 'jquery', 'gulp'],
     excerpt:
-      'Freelance: Website integration using WordPress (frontend from scratch)',
+      'Freelance: Website integration using WordPress (frontend from scratch).',
   },
   {
     title: 'trace-mobile',
     demoUrl: 'https://www.tracemobile.co.za/',
-    srcUrl: '',
     createdAt: '5/1/2018',
     tags: ['wordpress', 'php', 'underscore', 'acf', 'jquery', 'scss'],
     excerpt: 'website development using WordPress for the Unscuzzy agency.',
   },
   {
     title: 'new-tab',
-    demoUrl: '',
     srcUrl: 'https://github.com/juliencrn/new-tab',
     createdAt: '2/7/2022',
     tags: ['react', 'chrome-extension', 'typescript', 'aura-theme'],
@@ -622,9 +671,19 @@ const projects: Project[] = [
       'A very small Chrome extension that reminds me my main goal each time I open a new tab in my browser.',
   },
   {
+    title: 'erlond-crowdfunding',
+    excerpt:
+      'Learn: Discover Elrond smart-contract dev building a crowdfunding dapp (only backend and unit tests).',
+    tags: ['elrond', 'web3', 'rust', 'wasm'],
+    srcUrl: 'https://github.com/juliencrn/elrond-crowdfunding',
+    createdAt: '19/1/2022',
+    unFinished: true, // Have to test it before to be sure it works as expected
+  },
+  {
     title: 'lynxee-nft',
-    demoUrl: 'https://lynxee.neodium.io/',
-    srcUrl: '', // soon open-source https://github.com/juliencrn/lynxee
+    // demoUrl: 'https://lynxee.neodium.io/',
+    demoUrl: 'https://twitter.com/lynxeeelrond?lang=en',
+    srcUrl: 'https://github.com/juliencrn/lynxee',
     createdAt: '1/1/2022',
     tags: [
       'rust',

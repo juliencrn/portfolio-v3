@@ -1,4 +1,5 @@
 import { Project } from '../types';
+import AnimeOnAppear from './AnimeOnAppear';
 import { ExternalLinkIcon, GithubIcon } from './icons';
 
 export function ProjectCard({
@@ -35,6 +36,21 @@ export function ProjectCard({
         <TagList tags={tags} />
       </p>
     </article>
+  );
+}
+
+export function ProjectList({ projects }: { projects: Project[] }) {
+  return (
+    <ul className="my-6 md:my-12">
+      {projects.map((project, i) => (
+        <li key={project.title}>
+          <AnimeOnAppear>{i > 0 && <hr className="my-6" />}</AnimeOnAppear>
+          <AnimeOnAppear>
+            <ProjectCard {...project} />
+          </AnimeOnAppear>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -78,6 +94,29 @@ export function ProjectSmallCard({
 
       <p>{excerpt}</p>
     </li>
+  );
+}
+
+interface SmallProjectListProps {
+  projectsByYears: [string, Project[]][];
+}
+
+export function SmallProjectList({ projectsByYears }: SmallProjectListProps) {
+  return (
+    <ul className="my-6 md:my-12">
+      {projectsByYears.map(([year, list]) => (
+        <li key={year}>
+          <AnimeOnAppear>
+            <span className="title h4 mb-3 block">{year}</span>
+            <ul className="pl-3 sm:pl-5 mb-8">
+              {list.map(project => (
+                <ProjectSmallCard key={project.title} {...project} />
+              ))}
+            </ul>
+          </AnimeOnAppear>
+        </li>
+      ))}
+    </ul>
   );
 }
 
