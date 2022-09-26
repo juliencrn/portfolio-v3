@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { ReactNode } from 'react';
 import { navMenu, siteMetadata, socialMenu } from '../config';
@@ -12,11 +13,35 @@ interface LayoutProps {
 }
 
 function Layout({ children, pageTitle, backgroundIndex }: LayoutProps) {
+  const router = useRouter();
+  const seo = {
+    title: pageTitle || "Julien's portfolio",
+    description: siteMetadata.description,
+    siteName: siteMetadata.title,
+    image: '',
+    url: `${siteMetadata.siteUrl}${router.pathname}`,
+  };
+
   return (
     <>
       <Head>
-        <title>{pageTitle || "Julien's portfolio"}</title>
-        <meta name="description" content={siteMetadata.description} />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        {/* <meta name="image" content={seo.image} /> */}
+        <link rel="canonical" key={seo.url} href={seo.url} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:url" content={seo.url} />
+        <meta name="twitter:description" content={seo.description} />
+        {/* <meta name="twitter:image" content={seo.image} /> */}
+
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:site_name" content={seo.siteName} />
+        {/* <meta property="og:image" content={seo.image} /> */}
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.url} />
       </Head>
 
       <div className={`Layout page-bg-${backgroundIndex || 4}`}>
@@ -31,11 +56,11 @@ function Layout({ children, pageTitle, backgroundIndex }: LayoutProps) {
       />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-      `}
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+        `}
       </Script>
     </>
   );
