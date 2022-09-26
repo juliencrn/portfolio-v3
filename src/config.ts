@@ -3,7 +3,8 @@ export const siteMetadata = {
   author: 'juliencrn', // Github username
   mail: 'juliencaron@pm.me',
   title: 'Passionate developer',
-  description: 'Hi there 👋 My name is Julien and I love build some stuff living in the web, or outside. Welcome to my garden!',
+  description:
+    'Hi there 👋 My name is Julien and I love build some stuff living in the web, or outside. Welcome to my garden!',
 };
 
 export const links = {
@@ -25,10 +26,3 @@ export const socialMenu = [
   { label: 'telegram', link: links.telegram },
   { label: 'linkedin', link: links.linkedin },
 ];
-
-export default {
-  siteMetadata,
-  links,
-  navMenu,
-  socialMenu,
-};

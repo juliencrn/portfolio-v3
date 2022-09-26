@@ -8,8 +8,8 @@ import Layout from '../components/Layout';
 import AnimeOnAppear from '../components/AnimeOnAppear';
 
 interface PageProps {
-  featuredProjects: Project[]
-  projectsByYears: [string, Project[]][]
+  featuredProjects: Project[];
+  projectsByYears: [string, Project[]][];
 }
 
 function Projects({ featuredProjects, projectsByYears }: PageProps) {
@@ -22,10 +22,11 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
               Work, learn, open-source.
             </h1>
             <p className="h3 subtitle mb-4">
-              I love to build stuffs, seriously, I'm addicted 🤣.
-              I like both shipping a PoC or writing clean code, work on backend or frontend,
-              building CLI, web, mobile, web3 applications, scripting, automating, testing...
-              Currently, I'm excited about Rust and blockchain related topics.
+              {`I love to build stuffs, seriously, I'm addicted 🤣. I like both
+              shipping a PoC or writing clean code, work on backend or frontend,
+              building CLI, web, mobile, web3 applications, scripting,
+              automating, testing... Currently, I'm excited about Rust and
+              blockchain related topics.`}
             </p>
           </section>
         </AnimeOnAppear>
@@ -62,11 +63,9 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
             {projectsByYears.map(([year, list]) => (
               <li key={year}>
                 <AnimeOnAppear>
-                  <span className="title h4 mb-3 block">
-                    {year}
-                  </span>
+                  <span className="title h4 mb-3 block">{year}</span>
                   <ul className="pl-3 sm:pl-5 mb-8">
-                    {list.map((project) => (
+                    {list.map(project => (
                       <ProjectSmallCard key={project.title} {...project} />
                     ))}
                   </ul>
@@ -76,22 +75,18 @@ function Projects({ featuredProjects, projectsByYears }: PageProps) {
           </ul>
         </section>
       </div>
-
     </Layout>
-
   );
 }
 
 export default Projects;
 
-const CodeTitle = ({ category }: { category: string}) => (
+const CodeTitle = ({ category }: { category: string }) => (
   <pre className="flex flex-wrap">
     <code className="text-violet-400 mr-2 md:mr-4">{'->'}</code>
     projects
     <code className="text-gray-50">(</code>
-    <code className="text-violet-400">
-      {`'${category}'`}
-    </code>
+    <code className="text-violet-400">{`'${category}'`}</code>
     <code className="text-gray-50">)</code>
   </pre>
 );
@@ -107,15 +102,17 @@ export const getStaticProps: GetStaticProps = async () => {
   for (let i = 0; i < projects.length; i++) {
     // exclude un-finished project and notify me
     if (projects[i].unFinished) {
-      console.warn(`warn - Project "${projects[i].title}" not published: unfinished.`);
+      console.warn(
+        `warn - Project "${projects[i].title}" not published: unfinished.`,
+      );
       unFinishedCount += 1;
-      // eslint-disable-next-line no-continue
       continue;
     }
     // exclude project without any link
     if (!projects[i].demoUrl && !projects[i].srcUrl) {
-      console.warn(`warn - pages/projects/getStaticProps: ${projects[i].title} has not link`);
-      // eslint-disable-next-line no-continue
+      console.warn(
+        `warn - pages/projects/getStaticProps: ${projects[i].title} has not link`,
+      );
       continue;
     }
 
@@ -133,9 +130,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   console.log(`info - there is ${unFinishedCount} un-finished project(s)`);
 
-  const projectsByYears = Object
-    .entries(projectsByYearsMap)
-    .sort((a, b) => Number(b[0]) - Number(a[0]));
+  const projectsByYears = Object.entries(projectsByYearsMap).sort(
+    (a, b) => Number(b[0]) - Number(a[0]),
+  );
 
   // will be passed to the page component as props
   return { props: { featuredProjects, projectsByYears } };

@@ -7,9 +7,7 @@ function Contact() {
     <Layout pageTitle="Say hello to Julien">
       <AnimeOnAppear className="m-auto max-w-4xl mx-auto p-4">
         <h1 className="title h1 mb-4">
-          <span className="pb-3 inline-block">
-            🤙
-          </span>
+          <span className="pb-3 inline-block">🤙</span>
           <br />
           Say hello ―
         </h1>
@@ -18,9 +16,7 @@ function Contact() {
         </h2>
         <ul className="h3 mb-4">
           <li>
-            <a href={`mailto:${siteMetadata.mail}`}>
-              {siteMetadata.mail}
-            </a>
+            <a href={`mailto:${siteMetadata.mail}`}>{siteMetadata.mail}</a>
           </li>
           {socialMenu.map(({ label, link }) => (
             <li key={link}>
