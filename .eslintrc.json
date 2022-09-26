@@ -1,15 +1,59 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb", "airbnb/hooks"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react", "prettier", "jsx-a11y"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
+    "prettier/prettier": "warn",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": "off",
-    "react/jsx-props-no-spreading": "off",
-    "import/extensions": "off",
-    "react/no-unescaped-entities": "warn",
-    "react/function-component-definition": "off",
-    "no-plusplus": "off",
-    "no-use-before-define": "off",
-    "jsx-a11y/anchor-is-valid": "off",
-    "react/require-default-props": "off"
-  }
+    "jsx-a11y/anchor-is-valid": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "plugins": ["@typescript-eslint/eslint-plugin"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      },
+
+      "rules": {
+        // We should absolutely avoid using ts-ignore, but it"s not always possible.
+        // particular when a dependencies types are incorrect.
+        "@typescript-eslint/ban-ts-comment": [
+          "warn",
+          { "ts-ignore": "allow-with-description" }
+        ],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": true
+          }
+        ]
+      }
+    }
+  ]
 }
