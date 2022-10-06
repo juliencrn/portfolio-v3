@@ -493,6 +493,7 @@ const projects: Project[] = [
     srcUrl: 'https://github.com/juliencrn/usehooks-ts',
     createdAt: '4/16/2020',
     tags: [
+      'typescript',
       'react',
       'gatsby',
       'hooks',
@@ -500,7 +501,6 @@ const projects: Project[] = [
       'mdx',
       'react-hooks',
       'reactjs',
-      'typescript',
     ],
     excerpt:
       "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 90k downloads/week.",
@@ -704,9 +704,16 @@ const projects: Project[] = [
     demoUrl: 'https://www.chefclub.tv/',
     srcUrl: '', // soon open-source https://github.com/juliencrn/lynxee
     createdAt: '9/1/2021',
-    tags: ['react', 'redux', 'gatsby', 'scss-modules'],
+    tags: [
+      'typescript',
+      'react',
+      'redux',
+      'gatsby',
+      'scss-modules',
+      'design-system',
+    ],
     excerpt:
-      "Freelance: I've contributed to build the frontend of Chefclub.tv for months using React and Typescript.",
+      "Freelance: I've contributed to build the frontend of Chefclub.tv (with over 2B monthly organic views) for months using React and Typescript.",
     featured: true,
   },
   {
