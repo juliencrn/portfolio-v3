@@ -8,7 +8,7 @@ const projects: Project[] = [
     demoUrl: 'https://allfeat.com/',
     currently: true,
     srcUrl: 'https://github.com/All-feat',
-    createdAt: '1/5/2022',
+    createdAt: '5/1/2022',
     tags: [
       'web3',
       'rust',
@@ -32,7 +32,7 @@ const projects: Project[] = [
     excerpt:
       'Side project: (quite secret for now) Decentralized application built on the Solana blockchain.',
     currently: true,
-    createdAt: '18/9/2022',
+    createdAt: '9/18/2022',
     // srcUrl: "https://github.com/juliencrn/Jlfd" // private for now
     tags: [
       'solana',
@@ -49,7 +49,7 @@ const projects: Project[] = [
     excerpt:
       "Side project: I'm experimenting algorithmic trading like alpha trading or DEX arbitrage.",
 
-    createdAt: '1/4/2022',
+    createdAt: '4/1/2022',
     currently: true,
     tags: [
       'web3',
@@ -67,7 +67,7 @@ const projects: Project[] = [
     excerpt: 'Learn: Little CLI project to discover Python.',
     srcUrl: 'https://github.com/juliencrn/matrix-rain',
     tags: ['python', 'cli'],
-    createdAt: '3/5/2022',
+    createdAt: '5/3/2022',
   },
   {
     title: 'wallkanda',
@@ -505,6 +505,14 @@ const projects: Project[] = [
     excerpt:
       "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 90k downloads/week.",
     featured: true,
+  },
+  {
+    title: 'term-history',
+    srcUrl: 'https://github.com/juliencrn/term-history',
+    createdAt: '10/17/2022',
+    tags: ['rust', 'cli', 'clap', 'zsh'],
+    excerpt:
+      'CLI app that shows you which terminal programs you use most often.',
   },
   {
     title: 'voting-dapp',
