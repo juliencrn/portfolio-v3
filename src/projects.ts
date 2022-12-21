@@ -2,6 +2,22 @@ import { Project } from './types';
 
 const projects: Project[] = [
   {
+    title: 'napcat',
+    excerpt:
+      'CTO: we convert a Twitter signal into a buy order on your Binance account',
+    demoUrl: 'https://napcat.io/',
+    createdAt: '10/2/2022',
+    tags: [
+      'react',
+      'next.js',
+      'tailwindcss',
+      'typescript',
+      'firebase',
+      'nest.js',
+    ],
+    currently: true,
+  },
+  {
     title: 'allfeat',
     excerpt:
       "Freelance: I'm currently working at Allfeat as full-stack web3 developer. We build a blockchain on top on Substrate for the music industry. We also have to develop websites, DevTools, SDK, DApps... :)",
@@ -34,6 +50,7 @@ const projects: Project[] = [
     currently: true,
     createdAt: '9/18/2022',
     // srcUrl: "https://github.com/juliencrn/Jlfd" // private for now
+    unFinished: true,
     tags: [
       'solana',
       'rust',
@@ -503,7 +520,7 @@ const projects: Project[] = [
       'reactjs',
     ],
     excerpt:
-      "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 90k downloads/week.",
+      "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 150k downloads/week.",
     featured: true,
   },
   {
