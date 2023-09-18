@@ -2,27 +2,50 @@ import { Project } from './types';
 
 const projects: Project[] = [
   {
+    title: 'allfeat-wallet',
+    excerpt:
+      "Freelance: I build a web3 non-custodial wallet for the Allfeat's Network as a Chrome extension on top on the Polkadot.js one",
+    tags: ['polkadot.js', 'react', 'chrome-extension', 'wallet', 'web3'],
+    createdAt: '5/5/2023',
+    srcUrl: 'https://github.com/Allfeat/wallet-extension',
+  },
+  {
+    title: 'todohub',
+    excerpt:
+      'Learn: Small project to discover functional programming and DDD in Typescript',
+    srcUrl: 'https://github.com/juliencrn/TodoHub',
+    createdAt: '8/22/2023',
+    tags: ['fp-ts', 'typescript', 'ddd', 'express.js'],
+  },
+  {
+    title: 'chess-game',
+    excerpt:
+      'Learn: Dive into functional programming in F# building a simple CLI Chess game',
+    createdAt: '7/31/2023',
+    tags: ['.NET', 'f#', 'CLI'],
+    srcUrl: 'https://github.com/juliencrn/ChessGame',
+  },
+  {
     title: 'napcat',
     excerpt:
       'CTO: we convert a Twitter signal into a buy order on your Binance account',
     demoUrl: 'https://napcat.io/',
-    createdAt: '10/2/2022',
+    createdAt: '1/1/2023',
     tags: [
+      'firebase',
       'react',
       'next.js',
       'tailwindcss',
       'typescript',
-      'firebase',
       'nest.js',
     ],
-    currently: true,
+    currently: false,
   },
   {
     title: 'allfeat',
     excerpt:
       "Freelance: I'm currently working at Allfeat as full-stack web3 developer. We build a blockchain on top on Substrate for the music industry. We also have to develop websites, DevTools, SDK, DApps... :)",
     demoUrl: 'https://allfeat.com/',
-    currently: true,
     srcUrl: 'https://github.com/All-feat',
     createdAt: '5/1/2022',
     tags: [
@@ -64,10 +87,9 @@ const projects: Project[] = [
   {
     title: 'crypto-trading-bots',
     excerpt:
-      "Side project: I'm experimenting algorithmic trading like alpha trading or DEX arbitrage.",
+      "Side project: I'm often experimenting algorithmic trading like alpha trading or DEX arbitrage.",
 
     createdAt: '4/1/2022',
-    currently: true,
     tags: [
       'web3',
       'solidity',
@@ -512,15 +534,15 @@ const projects: Project[] = [
     tags: [
       'typescript',
       'react',
-      'gatsby',
+      'next.js',
       'hooks',
-      'material-ui',
+      'tailwind',
       'mdx',
       'react-hooks',
       'reactjs',
     ],
     excerpt:
-      "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 150k downloads/week.",
+      "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 300k downloads/week.",
     featured: true,
   },
   {

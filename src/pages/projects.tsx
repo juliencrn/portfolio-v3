@@ -31,19 +31,23 @@ function Projects({
               {`I love to build stuffs, seriously, I'm addicted 🤣. I like both
               shipping a PoC or writing clean code, work on backend or frontend,
               building CLI, web, mobile, web3 applications, scripting,
-              automating, testing... Currently, I'm excited about Rust and
-              blockchain related topics.`}
+              automating, testing... Currently, I'm excited about Rust, 
+              blockchain and functional programming related topics.`}
             </p>
           </section>
         </AnimeOnAppear>
 
-        <Section title="current">
-          <ProjectList projects={currentProjects} />
-        </Section>
+        {currentProjects.length > 0 && (
+          <Section title="current">
+            <ProjectList projects={currentProjects} />
+          </Section>
+        )}
 
-        <Section title="featured">
-          <ProjectList projects={featuredProjects} />
-        </Section>
+        {featuredProjects.length > 0 && (
+          <Section title="featured">
+            <ProjectList projects={featuredProjects} />
+          </Section>
+        )}
 
         <Section title="public">
           <SmallProjectList projectsByYears={projectsByYears} />
@@ -74,7 +78,7 @@ const Section = ({ title, children }: SectionProps) => (
 
 const CodeTitle = ({ category }: { category: string }) => (
   <pre className="flex flex-wrap">
-    <code className="text-violet-400 mr-2 md:mr-4">{'->'}</code>
+    <code className="text-violet-400 mr-2 md:mr-4">{'|>'}</code>
     projects
     <code className="text-gray-50">(</code>
     <code className="text-violet-400">{`'${category}'`}</code>
