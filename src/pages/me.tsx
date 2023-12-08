@@ -13,16 +13,13 @@ function Home() {
             </h1>
 
             <p className="h3 subtitle mb-4">
-              {`Hello! My name is Julien, I'm French 🇫🇷, living in Spain 🇪🇸. I
-              enjoy writing applications since almost 7 years. My main skill is
-              frontend dev using React. Currently, I'm learning the backend side (F#, Typescript, Rust 🦀) and falling in love with functional programming.`}
+              {`Bonjour! I'm Julien, a French expat currently based in sunny Spain. I've been immersed in the world of application development, for seven years now, mainly rocking the frontend with React and Typescript.`}
             </p>
             <p className="h3 subtitle mb-4">
-              {`I'm very excited about the crypto-revolution going on and want to
-              spend more time on it.`}
+              {`Over the years, I've been diving into backend development, perfecting my craft in architecture, design patterns, clean code, and domain design. But what really gets me? Functional programming. Its elegant concepts and problem-solving approach fascinate me.`}
             </p>
             <p className="h3 subtitle mb-4">
-              {`Beside programming, I'm interested in finance and enjoy hybrid training (Street-lifting, Running, Cycling)`}
+              {`I'm captivated by the ongoing crypto-revolution and eager to dedicate more time to its exploration. Beyond coding, I have a keen interest in finance and thrive on hybrid training, engaging in street-lifting, running, and cycling.`}
             </p>
           </section>
         </AnimeOnAppear>

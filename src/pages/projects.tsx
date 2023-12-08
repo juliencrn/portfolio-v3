@@ -28,11 +28,7 @@ function Projects({
               Work, learn, open-source.
             </h1>
             <p className="h3 subtitle mb-4">
-              {`I love to build stuffs, seriously, I'm addicted 🤣. I like both
-              shipping a PoC or writing clean code, work on backend or frontend,
-              building CLI, web, mobile, web3 applications, scripting,
-              automating, testing... Currently, I'm excited about Rust, 
-              blockchain and functional programming related topics.`}
+              {`I love to build stuff – seriously, I'm addicted! 🤣 From shipping up quick Proof of Concepts to crafting squeaky-clean code, I'm all about diving into backend, frontend, CLI, web, mobile, web3 applications, scripting, automation, and testing. Currently, I'm excited about web3, software craftsmanship and FP.`}
             </p>
           </section>
         </AnimeOnAppear>
