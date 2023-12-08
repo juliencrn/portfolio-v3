@@ -2,6 +2,24 @@ import { Project } from './types';
 
 const projects: Project[] = [
   {
+    title: 'anthm',
+    excerpt:
+      "Freelance: I'm currently working at Anthm as senior fullstack developer. We build a gamified quiz platform to improve user engagement.",
+    tags: [
+      'react',
+      'next.js',
+      'typescript',
+      'atomic-design',
+      'storybook',
+      'turborepo',
+      'nestjs',
+    ],
+    createdAt: '11/15/2023',
+    srcUrl: 'https://github.com/Anthm-FR',
+    demoUrl: 'https://www.anthm.io/',
+    currently: true,
+  },
+  {
     title: 'allfeat-wallet',
     excerpt:
       "Freelance: I build a web3 non-custodial wallet for the Allfeat's Network as a Chrome extension on top on the Polkadot.js one",
@@ -544,6 +562,7 @@ const projects: Project[] = [
     excerpt:
       "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 300k downloads/week.",
     featured: true,
+    currently: true,
   },
   {
     title: 'term-history',
