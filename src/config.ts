@@ -10,7 +10,6 @@ export const siteMetadata = {
 export const links = {
   github: 'https://github.com/juliencrn',
   linkedin: 'https://www.linkedin.com/in/caronjulien/',
-  telegram: 'https://t.me/juliencrn',
 };
 
 // Note: Internal link with Next/Link
@@ -23,6 +22,5 @@ export const navMenu = [
 // Note: External links only
 export const socialMenu = [
   { label: 'github', link: links.github },
-  { label: 'telegram', link: links.telegram },
   { label: 'linkedin', link: links.linkedin },
 ];
