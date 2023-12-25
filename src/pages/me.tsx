@@ -19,7 +19,7 @@ function Home() {
               {`Over the years, I've been diving into backend development, perfecting my craft in architecture, design patterns, clean code, and domain design. But what really gets me? Functional programming. Its elegant concepts and problem-solving approach fascinate me.`}
             </p>
             <p className="h3 subtitle mb-4">
-              {`I'm captivated by the ongoing crypto-revolution and eager to dedicate more time to its exploration. Beyond coding, I have a keen interest in finance and thrive on hybrid training, engaging in street-lifting, running, and cycling.`}
+              {`I'm also captivated by the ongoing crypto-revolution and eager to dedicate more time to its exploration. Beyond coding, I have a keen interest in finance and thrive on hybrid training, engaging in street-lifting, running, and cycling.`}
             </p>
           </section>
         </AnimeOnAppear>
