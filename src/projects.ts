@@ -4,7 +4,7 @@ const projects: Project[] = [
   {
     title: 'anthm',
     excerpt:
-      "Freelance: I'm currently working at Anthm as senior fullstack developer. We build a gamified quiz platform to improve user engagement.",
+      "Freelance: Anthm is building a gamified quiz platform to improve user engagement. I helped to migrate the design system.",
     tags: [
       'react',
       'next.js',
@@ -13,11 +13,11 @@ const projects: Project[] = [
       'storybook',
       'turborepo',
       'nestjs',
+      'scss-modules',
     ],
     createdAt: '11/15/2023',
     srcUrl: 'https://github.com/Anthm-FR',
     demoUrl: 'https://www.anthm.io/',
-    currently: true,
   },
   {
     title: 'allfeat-wallet',
@@ -562,7 +562,7 @@ const projects: Project[] = [
     excerpt:
       "Open-source: I'm the creator and the main maintainer of the usehooks-ts React hook library, ready to use, written in Typescript with more than 300k downloads/week.",
     featured: true,
-    currently: true,
+    // currently: true,
   },
   {
     title: 'term-history',
