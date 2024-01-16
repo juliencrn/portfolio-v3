@@ -72,17 +72,18 @@ function Header() {
   return (
     <AnimeOnAppear>
       <header className="w-full px-4 py-6 font-mono flex justify-between max-w-7xl mx-auto">
-        <Link href="/">
-          <a className="sm:react-effect text-glow">Home</a>
+        <Link href="/" className="sm:react-effect text-glow">
+          Home
         </Link>
         <nav>
           <ul className="flex">
             {navMenu.map(({ label, path }) => (
-              <li key={path} className="">
-                <Link href={path}>
-                  <a className="px-1 sm:px-2 code-effect text-glow text-sm sm:text-base">
-                    {label}
-                  </a>
+              <li key={path}>
+                <Link
+                  href={path}
+                  className="px-1 sm:px-2 code-effect text-glow text-sm sm:text-base"
+                >
+                  {label}
                 </Link>
               </li>
             ))}
