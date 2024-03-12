@@ -4,7 +4,7 @@ const projects: Project[] = [
   {
     title: 'anthm',
     excerpt:
-      "Freelance: Anthm is building a gamified quiz platform to improve user engagement. I helped to migrate the design system.",
+      'Freelance: Anthm is building a gamified quiz platform to improve user engagement. I helped to migrate the design system.',
     tags: [
       'react',
       'next.js',

@@ -2,7 +2,7 @@
 import AnimeOnAppear from '../components/AnimeOnAppear';
 import Layout from '../components/Layout';
 
-function Home() {
+function Me() {
   return (
     <Layout>
       <div className="max-w-4xl mx-auto w-full p-4">
@@ -28,4 +28,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Me;

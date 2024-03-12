@@ -16,6 +16,7 @@ export const links = {
 export const navMenu = [
   { label: 'me', path: '/me' },
   { label: 'projects', path: '/projects' },
+  { label: 'donate', path: '/donate' },
   { label: 'contact', path: '/contact' },
 ];
 
@@ -24,3 +25,11 @@ export const socialMenu = [
   { label: 'github', link: links.github },
   { label: 'linkedin', link: links.linkedin },
 ];
+
+export const funding = {
+  github: 'https://github.com/sponsors/juliencrn',
+  paypal: 'https://www.paypal.com/paypalme/juliencrn',
+  stripe: 'https://buy.stripe.com/fZefZY8Bv32cg9O3cc',
+  btc: 'bc1qwys40tnd0lxf9lr9l0t6xc63dpxyucj4x4nay0',
+  eth: '0x36a85155a8300754C56395D5af24553FB18915D6',
+};
